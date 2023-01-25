@@ -1,0 +1,476 @@
+@charset "utf-8";
+@import url("default.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body,
+html {
+    font-size: 12px;
+    font-family: serif;
+    font-family: "Noto Sans KR'", sans-serif;
+    color: #222;
+}
+
+a {
+    color: #222;
+}
+
+/* -- header -- */
+#header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    z-index: 10;
+}
+
+#header .header_wrapper {
+    width: 90%;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .header_wrapper .logo {
+    width: 70px;
+    height: 40px;
+}
+
+#header .header_wrapper .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/logo.svg") no-repeat;
+    background-size: contain;
+    text-indent: -99999px;
+}
+
+#header .header_wrapper button {
+    background: transparent;
+    cursor: pointer;
+}
+
+#header .header_wrapper button span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #222;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+#header .header_wrapper button.active .b1 {
+    transform: translate(0px, 5px) rotate(45deg);
+}
+
+#header .header_wrapper button.active .b2 {
+    display: none;
+}
+
+#header .header_wrapper button.active .b3 {
+    transform: translate(0px, -5px)rotate(-45deg);
+}
+
+/* -- section -- */
+#visual_wrapper>.visual {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+#visual_wrapper>.visual>.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.visual1 {
+    background: url("../images/original.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.visual2 {
+    background: url("../images/sports.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.visual3 {
+    background: url("../images/terrex.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.visual4 {
+    background: url("../images/plastic.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* -- visual1 -- */
+.visual1 .txt {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.visual1 .txt.on {
+    left: 8%;
+    opacity: 1;
+    transition: all 0.7s ease-out;
+}
+
+.visual1 .txt>h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.visual1 .txt>strong {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.visual1 .txt>a {
+    display: block;
+    font-size: 1.4rem;
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
+    background: #222 url("../images/arrow.svg") no-repeat right 15px center;
+    color: #fff;
+    padding-left: 15px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+
+.visual1 .txt>a::after {
+    content: '';
+    display: block;
+    width: 125px;
+    height: 50px;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: -1;
+}
+
+/* -- visual2 -- */
+.visual2 {
+    opacity: 0;
+    z-index: -1;
+}
+
+.visual2 .txt {
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.visual2 .txt.on {
+    right: 8%;
+    opacity: 1;
+    transition: all 0.7s ease-out;
+}
+
+.visual2 .txt>strong {
+    display: block;
+    font-style: italic;
+    font-size: 3.4rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.visual2 .txt>h2 {
+    width: 410px;
+    height: 74px;
+    background: url("../images/possible.svg") no-repeat;
+    background-size: contain;
+    text-indent: -99999px;
+    margin-bottom: 30px;
+}
+
+.visual2 .txt>a {
+    display: block;
+    font-size: 1.4rem;
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
+    background: #fff url("../images/arrowB.svg") no-repeat right 15px center;
+    color: #222;
+    padding-left: 15px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.visual2 .txt>a::after {
+    content: '';
+    display: block;
+    width: 125px;
+    height: 50px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: -1;
+}
+
+/* -- visual3 -- */
+.visual3 {
+    z-index: -1;
+    opacity: 0;
+}
+
+.visual3 .txt {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.visual3 .txt.on {
+    left: 8%;
+    opacity: 1;
+    transition: all 0.7s ease-out;
+}
+
+.visual3 .txt>h2 {
+    width: 300px;
+    height: 44px;
+    background: url("../images/terrex.svg") no-repeat;
+    background-size: contain;
+    text-indent: -99999px;
+    margin-bottom: 30px;
+}
+
+.visual3 .txt>strong {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.visual3 .txt>strong>span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.visual3 .txt>strong>span:last-of-type {
+    margin-bottom: 0;
+}
+
+.visual3 .txt>a {
+    display: block;
+    font-size: 1.4rem;
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
+    background: #222 url("../images/arrow.svg") no-repeat right 15px center;
+    color: #fff;
+    padding-left: 15px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+
+.visual3 .txt>a::after {
+    content: '';
+    display: block;
+    width: 125px;
+    height: 50px;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: -1;
+}
+
+/* -- visual3 -- */
+.visual4 {
+    z-index: -1;
+}
+
+.visual4 .txt {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.visual4 .txt.on {
+    top: 50%;
+    opacity: 1;
+    transition: all 0.6s ease-out;
+}
+
+.visual4 .txt>strong {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 40px;
+    background: url("../images/plasticlogo.svg") no-repeat;
+    background-size: contain;
+    text-indent: -99999px;
+}
+
+.visual4 .txt>h2 {
+    text-align: center;
+}
+
+.visual4 .txt>h2>span {
+    display: block;
+    font-size: 6.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.visual4 .txt>a {
+    display: block;
+    text-align: center;
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: 500;
+    background: url("../images/arrow.svg") no-repeat right 80px center;
+}
+
+/* -- page nate -- */
+.pagenate {
+    position: absolute;
+    left: 8%;
+    bottom: 5%;
+    display: flex;
+    z-index: 10;
+}
+
+.pagenate a {
+    display: block;
+    margin-right: 15px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.pagenate a:last-of-type {
+    margin-right: 0;
+}
+
+.pagenate a.active {
+    color: #fff;
+}
+
+/* -- footer -- */
+#footer {
+    position: absolute;
+    bottom: 2%;
+    right: 3%;
+    z-index: 10;
+}
+
+#footer a {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width:640px) {
+    .visual1 {
+        background: url("../images/original.jpg") no-repeat left 40% center;
+        background-size: cover;
+    }
+
+    .visual1 .txt>h2 {
+        font-size: 2.8rem;
+    }
+
+    .visual1 .txt>strong {
+        font-size: 1.4rem;
+    }
+
+    .visual2 .txt>strong {
+        font-size: 2.8rem;
+    }
+
+    .visual2 .txt>h2 {
+        width: 320px;
+        height: 58px;
+        background: url("../images/possible.svg") no-repeat;
+        background-size: contain;
+        text-indent: -99999px;
+        margin-bottom: 30px;
+    }
+
+    .visual3 {
+        background: url("../images/terrex.jpg") no-repeat left center;
+        background-size: cover;
+    }
+
+
+    .visual3 .txt>strong>span>span {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .visual3 .txt>strong {
+        font-size: 1.4rem;
+    }
+
+    .visual3 .txt>a::after {
+        border: 1px solid #fff;
+    }
+    .visual4 .txt>strong {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    .visual4 .txt>h2>span {
+        display: block;
+        font-size: 4rem;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .visual4 .txt>a {
+        background: url("../images/arrow.svg") no-repeat right 45px center;
+        font-size: 1.8rem;
+    }
+
+    .pagenate {
+        left: 50%;
+        bottom: 6%;
+        transform: translateX(-50%);
+    }
+    
+    .pagenate a {
+        margin-right: 10px;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    #footer {
+        width: 100%;
+        position: absolute;
+        bottom: 2%;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+    }
+    #footer a {
+        color: #fff;
+        font-size: 1.2rem;
+    }
+}
