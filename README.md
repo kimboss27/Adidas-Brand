@@ -1,2 +1,0 @@
-# Adidas-Brand
-Adidas Brand
