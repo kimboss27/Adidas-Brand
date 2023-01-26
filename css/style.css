@@ -430,7 +430,7 @@ a {
     }
 
     .visual3 .txt>a::after {
-        border: 1px solid #fff;
+        border: 1px solid #222;
     }
     .visual4 .txt>strong {
         width: 80px;
