@@ -260,7 +260,7 @@ a {
     display: block;
     font-size: 1.6rem;
     margin-bottom: 30px;
-    font-weight: 500;
+    font-weight: 5  00;
 }
 
 .visual3 .txt>strong>span {
@@ -363,7 +363,7 @@ a {
     margin-right: 15px;
     font-size: 2rem;
     font-weight: 500;
-    color: #ccc;
+    color: #999;
 }
 
 .pagenate a:last-of-type {
@@ -392,42 +392,43 @@ a {
         background: url("../images/original.jpg") no-repeat left 40% center;
         background-size: cover;
     }
-
+    
     .visual1 .txt>h2 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
 
     .visual1 .txt>strong {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .visual2 .txt>strong {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
 
     .visual2 .txt>h2 {
-        width: 320px;
-        height: 58px;
+        width: 250px;
+        height: 45px;
         background: url("../images/possible.svg") no-repeat;
         background-size: contain;
         text-indent: -99999px;
         margin-bottom: 30px;
     }
     .visual3 {
-        background: url("../images/terrex.jpg") no-repeat right 20% center;
+        background: url("../images/terrexH.jpg") no-repeat left 15% center;
         background-size: cover;
     }
     .visual3 .txt>h2 {
         background: url("../images/terrexW.svg") no-repeat;
         background-size: contain;
         margin-left: auto;
+        width: 250px;
+        height: 37px;
     }
     
     .visual3 .txt>strong {
         font-size: 1.4rem;
         color: #fff;
         text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-        text-align: right;
     }
 
     .visual3 .txt>strong>span>span {
@@ -438,20 +439,12 @@ a {
     
     .visual3 .txt>a {
         color: #222;
-        background: #fff;
-        margin-left: auto;
-        margin-right: 5px;
+        background: #fff url("../images/arrowB.svg") no-repeat right 15px center;
     }
     .visual3 .txt>a::after {
         border: 1px solid #fff;
     }
-    .visual3 .txt {
-        left: 60%;
-        transform: translate(-50%, -50%);
-    }
-    .visual3 .txt.on {
-        left: 50%; 
-    }
+
     .visual4 .txt>strong {
         width: 80px;
         height: 80px;
