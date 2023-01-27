@@ -2,7 +2,6 @@ $(document).ready(function(){
     let slide=$('.visual')
     let txt=$('.txt');
     let page=$('.pagenate > a');
-    let pageActive=$('.pagenate > .active');
     let currentIndex = 0;
     let slideNum=slide.length;
     let timer=0;
@@ -33,7 +32,6 @@ $(document).ready(function(){
         page.eq(currentIndex).addClass('active');
     
     }
-
     function nextSlide(){
         currentIndex++;
         if(currentIndex>=slideNum){
@@ -52,8 +50,16 @@ $(document).ready(function(){
         timer=setInterval(nextSlide,5000)
     });
        
-    /* -- 메뉴버튼 클릭 -- */
+    /* -- 메뉴 -- */
+    $('.sub').css({'display':'none'});
+    $('.originals').css({'display':'flex'});
     menuBtn.click(function(){
-        $(this).toggleClass('active')
+        $(this).toggleClass('active');
+        $('.menu').toggleClass('on');
+    });
+
+    $('.menu > .menu_wrap > ul > li > a').click(function(){
+        $(this).parent().find('.sub').show();
+        $(this).parent().siblings().find('.sub').hide();
     })
 });

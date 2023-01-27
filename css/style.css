@@ -10,6 +10,10 @@ html {
     color: #222;
 }
 
+html {
+    overflow-y: hidden;
+}
+
 a {
     color: #222;
 }
@@ -19,15 +23,18 @@ a {
     position: relative;
     width: 100%;
     height: 40px;
-    z-index: 10;
+    z-index: 1000;
 }
 
 #header .header_wrapper {
-    width: 90%;
-    margin: 30px auto 0;
+    max-width: 1280px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 10px 0px;
+    position: relative;
+    z-index: 100;
 }
 
 #header .header_wrapper .logo {
@@ -68,6 +75,195 @@ a {
 
 #header .header_wrapper button.active .b3 {
     transform: translate(0px, -5px)rotate(-45deg);
+}
+
+/* -- nav --*/
+.menu {
+    position: absolute;
+    left: 0;
+    top: -100vh;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    z-index: 10;
+    padding-top: 70px;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.menu.on {
+    top: 0;
+    height: calc(100vh - 200px);
+}
+
+.menu .menu_wrap {
+    max-width: 1280px;
+    padding: 0px 10px;
+    margin: 80px auto;
+}
+
+.menu .menu_wrap>ul {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+    position: relative;
+}
+
+.menu .menu_wrap>ul>li>a {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.menu .menu_wrap>ul>li>a>span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #999;
+    padding-top: 5px;
+}
+
+.menu .sub {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 400px;
+    top: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.menu .sub>ul {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+.menu .sub>ul::after {
+    display: block;
+    content: '';
+    height: 432px;
+    width: 1px;
+    background: #ccc;
+    position: absolute;
+    left: -100px;
+    top: 0;
+}
+
+.menu .sub>ul>li>a {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.menu .sub>a {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.menu .sub>.sub1 {
+    margin-bottom: 60px;
+}
+
+.menu .sub>.sub2 {
+    margin-bottom: 60px;
+}
+
+.menu .sub.stella>.sub2 {
+    margin-bottom: 0;
+}
+
+.menu .sub .total {
+    position: absolute;
+    left: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu .sub .total>.logo {
+    display: block;
+    width: 172px;
+    height: 30px;
+    margin: 0 auto 10px;
+    text-indent: -99999px;
+}
+
+.menu .originals .total>.logo {
+    background: url("../images/original_logo.jpg") no-repeat;
+    background-size: contain;
+}
+
+.menu .sports .total>.logo {
+    background: url("../images/sports_logo.jpg") no-repeat;
+    background-size: contain;
+}
+
+.menu .terrex .total>.logo {
+    background: url("../images/terrex_logo.jpg") no-repeat;
+    background-size: contain;
+}
+
+.menu .y3 .total>.logo {
+    background: url("../images/y3_logo.jpg") no-repeat;
+    background-size: contain;
+}
+
+.menu .stella .total>.logo {
+    background: url("../images/stella_logo.jpg") no-repeat;
+    background-size: contain;
+}
+
+.menu .plastic .total>.logo {
+    background: url("../images/plastic_logo.jpg") no-repeat;
+    background-size: contain;
+}
+
+.menu .sub .total>.btn {
+    display: block;
+    width: 110px;
+    height: 38px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    line-height: 43px;
+    margin: 20px auto 0;
+    font-size: 1.2rem;
+}
+
+.menu .sns {
+    position: absolute;
+    right: 5%;
+    bottom: 3%;
+    display: flex;
+    gap: 30px;
+}
+
+.menu .sns a {
+    display: block;
+    height: 25px;
+    text-indent: -99999px;
+}
+
+.menu .sns .insta {
+    width: 25px;
+    background: url("../images/insta.svg") no-repeat;
+    background-size: contain;
+}
+
+.menu .sns .facebook {
+    width: 12px;
+    background: url("../images/facebook.svg") no-repeat;
+    background-size: contain;
+}
+
+.menu .sns .twitter {
+    width: 31px;
+    background: url("../images/twitter.svg") no-repeat;
+    background-size: contain;
+}
+
+.menu .m_btn {
+    display: none;
 }
 
 /* -- section -- */
@@ -260,7 +456,7 @@ a {
     display: block;
     font-size: 1.6rem;
     margin-bottom: 30px;
-    font-weight: 5  00;
+    font-weight: 5 00;
 }
 
 .visual3 .txt>strong>span {
@@ -301,6 +497,7 @@ a {
 
 /* -- visual3 -- */
 .visual4 {
+    opacity: 0;
     z-index: -1;
 }
 
@@ -387,12 +584,62 @@ a {
     font-size: 1.3rem;
 }
 
+@media screen and (max-width:1024px) {
+
+    #header .header_wrapper {
+        max-width: 700px;
+    }
+
+    .menu .menu_wrap {
+        max-width: 600px;
+    }
+
+    .menu .sub>ul {
+        gap: 10px
+    }
+    .menu .sub>.sub1 {
+        margin-bottom: 40px;
+    }
+    .menu .sub>.sub2 {
+        margin-bottom: 40px;
+    }
+    .menu .sub .total {
+        display: none;
+    }
+
+    .menu .sub>a.m_btn {
+        display: block;
+        color: #222;
+        font-size: 1.5rem;
+        position: relative;
+        top: 50px;
+        font-weight: 700;
+    }
+}
+
 @media screen and (max-width:640px) {
+    #header .header_wrapper {
+        max-width: 340px;
+    }
+    .menu {
+        padding-top: 0;
+    }
+    .menu.on {
+        height: 100vh;
+    }
+    .menu .menu_wrap {
+        max-width: 330px;
+        margin-top: 150px;
+    }
+    .menu .sub>ul::after {
+        display: none;
+    } 
+    .menu .sub {display: none !important;}
     .visual1 {
         background: url("../images/original.jpg") no-repeat left 40% center;
         background-size: cover;
     }
-    
+
     .visual1 .txt>h2 {
         font-size: 2.6rem;
     }
@@ -413,10 +660,12 @@ a {
         text-indent: -99999px;
         margin-bottom: 30px;
     }
+
     .visual3 {
         background: url("../images/terrexH.jpg") no-repeat left 15% center;
         background-size: cover;
     }
+
     .visual3 .txt>h2 {
         background: url("../images/terrexW.svg") no-repeat;
         background-size: contain;
@@ -424,11 +673,11 @@ a {
         width: 250px;
         height: 37px;
     }
-    
+
     .visual3 .txt>strong {
         font-size: 1.4rem;
         color: #fff;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     }
 
     .visual3 .txt>strong>span>span {
@@ -436,11 +685,12 @@ a {
         margin-bottom: 5px;
     }
 
-    
+
     .visual3 .txt>a {
         color: #222;
         background: #fff url("../images/arrowB.svg") no-repeat right 15px center;
     }
+
     .visual3 .txt>a::after {
         border: 1px solid #fff;
     }
