@@ -39,7 +39,7 @@ $(document).ready(function(){
         }
         goSlide(currentIndex);
     }
-    timer=setInterval(nextSlide,5000);
+    timer=setInterval(nextSlide,3000);
 
     /* -- pagenate 클릭 해당 페이지로 이동 -- */  
     page.click(function(e){
