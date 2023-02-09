@@ -62,4 +62,9 @@ $(document).ready(function(){
         $(this).parent().find('.sub').show();
         $(this).parent().siblings().find('.sub').hide();
     })
+
+    // 클릭 막기
+    $('a').click(function(e){
+        e.preventDefault()
+    })
 });
