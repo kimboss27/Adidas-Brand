@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     /* -- slide 실행 -- */
     txt.eq(0).addClass('on');
-    console.log(currentIndex);
+  
 
     function goSlide(index){
         slide.css({'opacity':0, 'z-index':-1});
@@ -29,8 +29,8 @@ $(document).ready(function(){
         }
         currentIndex=index;
         page.removeClass('active');
+        //console.log(currentIndex, index)
         page.eq(currentIndex).addClass('active');
-    
     }
     function nextSlide(){
         currentIndex++;
@@ -44,10 +44,10 @@ $(document).ready(function(){
     /* -- pagenate 클릭 해당 페이지로 이동 -- */  
     page.click(function(e){
         e.preventDefault();
-        let pageNum=$(this).index()
-        goSlide(pageNum)
+        let pageNum=$(this).index();
+        goSlide(pageNum);
         clearInterval(timer);
-        timer=setInterval(nextSlide,5000)
+        timer=setInterval(nextSlide,5000);
     });
        
     /* -- 메뉴 -- */
