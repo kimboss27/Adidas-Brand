@@ -63,7 +63,6 @@ $(document).ready(function(){
         $(this).parent().siblings().find('.sub').hide();
     })
 
-    // 클릭 막기
     $('a').click(function(e){
         e.preventDefault()
     })
